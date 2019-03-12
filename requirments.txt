@@ -1,2 +1,6 @@
 tweepy
-pip install flask flask-jsonpify flask-sqlalchemy flask-restful
+flask 
+pickle
+nltk
+json
+tweepy

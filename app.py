@@ -1,5 +1,5 @@
 import flask
-from twet_sent import tweet_stream_controller 
+from tweet_processing import tweet_stream_controller 
 import time
 from flask import request
 app = flask.Flask(__name__)
@@ -11,14 +11,14 @@ class Controller:
 			args = request.args
 			self.tweet_stream_controller = tweet_stream_controller(args['keyword'])
 			self.tweet_stream_controller.start_stream()
-			return "twitter API is streaming tweets"
+			return "Server is processing tweets"
 		except Exception as e:
 	    	return(str(e))
 
 	def end(self):
 		try:
 			self.tweet_stream_controller.end_stream()
-			return "twitter API streaming ended"
+			return "Server ended processing tweets"
 		except Exception as e:
 	    	return(str(e))
 
